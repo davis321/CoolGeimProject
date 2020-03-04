@@ -10,10 +10,13 @@ https://www.w3schools.com/css/css_dropdowns.asp
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
         <script src="JS/RenderGame.js">
-            
         </script>
-        <script type="text/javascript">
-</script>
+        <script>
+            console.log(1273);
+            function x(target){
+                console.log(document.getElementById("x"));
+    }
+        </script>
     </head>
     <body>
         <div class="navbar">
@@ -30,16 +33,17 @@ https://www.w3schools.com/css/css_dropdowns.asp
             </div> 
         </div>
         <p>Insert geim here</p>
-
-        <div class="flip-card" onclick="ani()">
-            <div class="flip-card-inner">
+        <div id="x"></div>
+        
+<!--        <div class="flip-card">
+            <div class="flip-card-inner" onclick="x(this)">
                 <div class="flip-card-back">
                     <img src="images/paul1.jpg" alt="Avatar" style="width:200px;height:200px;">
                 </div>
                 <div class="flip-card-front">
                 </div>
             </div>
-        </div>
+        </div>-->
     </body>
 </html>
 
