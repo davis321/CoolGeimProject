@@ -46,7 +46,7 @@ window.addEventListener("load", function () {
             pic.style.width = "300px";
             pic.style.height = "300px";
             let card = document.createElement("DIV");
-            card.classList.add("flip-card-inner");
+            card.classList.add("flip-card");
             card.appendChild(pic);
             div.appendChild(card);
             index++;
