@@ -1,4 +1,3 @@
-
 const picSets = [
     "shrek",
     "disappointed",
@@ -94,7 +93,3 @@ function makePics() {
   }
   pics = shuffle(pics);
 }
-
-// window.addEventListener("load", function () {
-//
-// });
