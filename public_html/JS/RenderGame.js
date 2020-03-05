@@ -1,56 +1,35 @@
-//
-//window.addEventListener("load", function () {
-////let main = document.getElementById("main");
-////let size = 4;
-////console.log(1);
-////for(let i = 0; i < size; i++) {
-////    let div = document.createElement("DIV");
-////    for (let j = 0; j < size; j++) {
-////        let pic = document.createElement("DIV");
-////        div.appendChild(pic);
-////    }
-////    console.log(2)
-////    main.appendChild(div);
-////}
-//    let divs0 = document.createElement("DIV");
-//    divs0.setAttribute("class", "flip-card");
-//    let divs1 = document.createElement("DIV");
-//    divs1.setAttribute("class", "flip-card-inner");
-//    let divs2 = document.createElement("DIV");
-//    divs2.setAttribute("class", "flip-card-back");
-//    let divs3 = document.createElement("DIV");
-//    divs3.setAttribute("class", "flip-card-front");
-//    let imag = document.createElement("IMG");
-//    imag.src = "images/paul1.jpg";
-//    imag.style = "width:200px;height:200px;";
-//    divs1.onclick = () => {
-//        divs1.style = "transform: rotateY(180deg);";
-//    };
-//    divs2.appendChild(imag);
-//    divs1.appendChild(divs2);
-//    divs1.appendChild(divs3);
-//    divs0.appendChild(divs1);
-//    document.getElementById("x").appendChild(divs0);
-//});
 
 const picSets = [
     "shrek",
     "disappointed",
+    "eilish",
+    "eminem",
+    "harvey",
+    "joji",
+    "khaled",
+    "malone",
+    "miley",
+    "ninja",
     "paul",
+    "pooh",
     "belle",
     "pewds",
     "pyro",
     "saitama",
+    "trump",
+    "zucc",
     "rock"
 ];
 let pics = [];
+let w=4;
+let h=4;
 
-for (let i = 0; i < picSets.length; i++) {
-    pics.push(picSets[i] + "1");
-    pics.push(picSets[i] + "2");
+function boi(hx,wx) {
+  w = wx;
+  h = hx;
+  makePics();
+  makeGrid();
 }
-;
-pics = shuffle(pics);
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -67,37 +46,55 @@ function shuffle(array) {
     return array;
 }
 
-console.log(pics);
+function makeGrid() {
+  document.getElementById("x").innerHTML = "";
+  let index = 0;
+  for (let i = 0; i < w; i++) {
+      let div = document.createElement("DIV");
+      div.setAttribute("class", "row");
+      for (let j = 0; j < h; j++) {
 
-window.addEventListener("load", function () {
-    let main = document.getElementById("main");
-    let size = 4;
-    let index = 0;
-    for (let i = 0; i < size; i++) {
-        let div = document.createElement("DIV");
-        for (let j = 0; j < size; j++) {
-            
-            let divs0 = document.createElement("DIV");
-            divs0.setAttribute("class", "flip-card");
-            let divs1 = document.createElement("DIV");
-            divs1.setAttribute("class", "flip-card-inner");
-            let divs2 = document.createElement("DIV");
-            divs2.setAttribute("class", "flip-card-back");
-            let divs3 = document.createElement("DIV");
-            divs3.setAttribute("class", "flip-card-front");
-            let imag = document.createElement("IMG");
-            imag.src = "images/" + pics[index] + ".jpg";
-            imag.style = "width:200px;height:200px;";
-            divs1.onclick = () => {
-                divs1.style = "transform: rotateY(180deg);";
-            };
-            divs2.appendChild(imag);
-            divs1.appendChild(divs2);
-            divs1.appendChild(divs3);
-            divs0.appendChild(divs1);
-            div.appendChild(divs0);
-            index++;
-        }
-        main.appendChild(div);
-    }
-});
+          let card = document.createElement("DIV");
+          card.setAttribute("class", "flip-card");
+          let cardIn = document.createElement("DIV");
+          cardIn.setAttribute("class", "flip-card-inner");
+          let cardBack = document.createElement("DIV");
+          cardBack.setAttribute("class", "flip-card-back");
+          let cardFront = document.createElement("DIV");
+          cardFront.setAttribute("class", "flip-card-front");
+          let par = document.createElement("p");
+          par.setAttribute("class", "rainbow-text");
+          par.innerHTML = "ur mom <br>gay";
+          let imag = document.createElement("IMG");
+          imag.src = "images/" + pics[index] + ".jpg";
+          imag.style = "width:100%;height:100%;";
+          cardIn.addEventListener( 'click', function() {
+            cardIn.classList.toggle('flipped');
+          });
+          cardFront.appendChild(par);
+          cardBack.appendChild(imag);
+          cardIn.appendChild(cardBack);
+          cardIn.appendChild(cardFront);
+          card.appendChild(cardIn);
+          div.appendChild(card);
+          index++;
+      }
+      document.getElementById("x").appendChild(div);
+  }
+}
+
+function makePics() {
+  pics = [];
+  let pS = picSets.slice(0);
+  for(let i =0; i<w*h/2;i++){
+    let r = Math.floor(Math.random() * pS.length);
+    pics.push(pS[r] + "1");
+    pics.push(pS[r] + "2");
+    pS.splice(r,1);
+  }
+  pics = shuffle(pics);
+}
+
+// window.addEventListener("load", function () {
+//
+// });

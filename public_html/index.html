@@ -1,48 +1,30 @@
 <!DOCTYPE html>
-<!--
-https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card
-https://www.w3schools.com/css/css_dropdowns.asp
--->
 <html>
     <head>
         <title>WIN FREE V-BUCKS BY PLAYING THIS GAME</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
-        <script src="JS/RenderGame.js">
-        </script>
-        <script>
-            console.log(1273);
-            function x(target){
-                console.log(document.getElementById("x"));
-    }
-        </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="JS/RenderGame.js"></script>
     </head>
     <body>
         <div class="navbar">
             <a style="font-size: 30px; padding-top: 16px;">CoolGeimProject</a>
             <div class="dropdown" style="float:right">
-                <button class="dropbtn">Select size 
+                <button class="dropbtn">Select size
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                    <a href="#">4 x 4</a>
-                    <a href="#">4 x 6</a>
-                    <a href="#">6 x 6</a>
+                    <a id="1" onclick="boi(4,4)">4 x 4</a>
+                    <a id="2" onclick="boi(6,4)">6 x 4</a>
+                    <a id="3" onclick="boi(6,6)">6 x 6</a>
                 </div>
-            </div> 
-        </div>
-        <p>Insert geim here</p>
-        
-        <div class="main-const">
-            <div id="main">
-                
             </div>
         </div>
-        
-        
-        <div id="x"></div>
-        
+
+            <div id="x" style="padding: 10px 0px"></div>
+
 <!--        <div class="flip-card">
             <div class="flip-card-inner" onclick="x(this)">
                 <div class="flip-card-back">
