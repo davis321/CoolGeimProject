@@ -1,3 +1,9 @@
+const pics = [
+    "shrek",
+    "paul",
+    "disappointed",
+]
+
 window.addEventListener("load", function() {
 let main = document.getElementById("main");
 let size = 4;
