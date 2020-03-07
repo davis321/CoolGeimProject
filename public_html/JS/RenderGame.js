@@ -26,10 +26,12 @@ const picSets = [
 let pics = [];
 let w = 4;
 let h = 4;
+let blocks = w*h;
 
 function boi(hx, wx) {
     w = wx;
     h = hx;
+    blocks = w*h;
     makePics();
     makeGrid();
 }
@@ -92,11 +94,11 @@ function makeGrid() {
 }
 
 function Match() {
-    flips = document.getElementsByClassName("flipped")
+    let flips = document.getElementsByClassName("flipped")
 
     if (flips.length > 1) {
-        meme = testClass(flips[0]);
-        pair = document.getElementsByClassName(meme);
+        let meme = testClass(flips[0]);
+        let pair = document.getElementsByClassName(meme);
         if(pair[0].classList.contains("flipped") && pair[1].classList.contains("flipped")) {
             setTimeout(function() {
                 pair[0].classList.add('fixed')
@@ -111,7 +113,6 @@ function Match() {
                 const len = flips.length;
                 for(let j= 0; j < len; j++) {
                     flips[0].classList.toggle('flipped');
-                    console.log(flips);
                 }
             }, 1000);
         }
@@ -121,7 +122,8 @@ function Match() {
 }
 
 function checkWin() {
-
+    const guessed = document.getElementsByClassName('fixed');
+    console.log(guessed.length);
 }
 
 function testClass(elem) {
