@@ -27,11 +27,13 @@ let pics = [];
 let w = 4;
 let h = 4;
 let blocks = w*h;
+let count = 0;
 
 function boi(hx, wx) {
     w = wx;
     h = hx;
     blocks = w*h;
+    count = 0;
     makePics();
     makeGrid();
 }
@@ -93,12 +95,27 @@ function makeGrid() {
     }
 }
 
+function makePics() {
+    pics = [];
+    let pS = picSets.slice(0);
+    for (let i = 0; i < w * h / 2; i++) {
+        let r = Math.floor(Math.random() * pS.length);
+        pics.push(pS[r] + "1");
+        pics.push(pS[r] + "2");
+        pS.splice(r, 1);
+    }
+    pics = shuffle(pics);
+}
+
+
 function Match() {
     let flips = document.getElementsByClassName("flipped")
 
     if (flips.length > 1) {
+        count++;
         let meme = testClass(flips[0]);
         let pair = document.getElementsByClassName(meme);
+        document.getElementById('count').innerHTML = "Count:" + count;
         if(pair[0].classList.contains("flipped") && pair[1].classList.contains("flipped")) {
             setTimeout(function() {
                 pair[0].classList.add('fixed')
@@ -136,16 +153,4 @@ function testClass(elem) {
         }
     }
     return value;
-}
-
-function makePics() {
-    pics = [];
-    let pS = picSets.slice(0);
-    for (let i = 0; i < w * h / 2; i++) {
-        let r = Math.floor(Math.random() * pS.length);
-        pics.push(pS[r] + "1");
-        pics.push(pS[r] + "2");
-        pS.splice(r, 1);
-    }
-    pics = shuffle(pics);
 }
