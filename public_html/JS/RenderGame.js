@@ -123,7 +123,9 @@ function Match() {
 
 function checkWin() {
     const guessed = document.getElementsByClassName('fixed');
-    console.log(guessed.length);
+    if(guessed.length == blocks) {
+        alert("VICTORY ROYALE");
+    }
 }
 
 function testClass(elem) {
