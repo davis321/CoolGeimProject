@@ -34,6 +34,7 @@ function boi(hx, wx) {
     h = hx;
     blocks = w*h;
     count = 0;
+    document.getElementById('count').innerHTML = "Count:" + count;
     makePics();
     makeGrid();
 }
