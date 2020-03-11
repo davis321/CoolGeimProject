@@ -72,7 +72,7 @@ function makeGrid() {
             cardFront.setAttribute("class", "flip-card-front");
             let par = document.createElement("p");
             par.setAttribute("class", "rainbow-text");
-            par.innerHTML = "ur mom <br>gay";
+            par.innerHTML = "???";
             let imag = document.createElement("IMG");
             imag.src = "images/" + pics[index] + ".jpg";
             imag.style = "width:100%;height:100%;";
