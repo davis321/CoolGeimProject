@@ -98,10 +98,23 @@ body {
 .flip-card-back {
   transform: rotateY(180deg);
 }
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center
+}
+.flex {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#count{
+    margin:auto;
+}
 
 .row:after {
   content: "";
-  display: table;
   clear: both;
 }
 .rainbow-text {
